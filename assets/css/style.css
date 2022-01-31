@@ -34,17 +34,7 @@
     height: 50px;
 }
 
-#fizzbuzz {
-    list-style-type: none;
-    padding: 0;
-}
-
-#numEl1 {
-    width: 100px;
-    height: 50px;
-}
-
-#numEl2 {
+#userInput {
     width: 100px;
     height: 50px;
 }

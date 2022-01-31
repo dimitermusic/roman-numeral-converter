@@ -19,7 +19,7 @@ Simple App that converts Roman Numeral input to numeric values using JavaScript,
 
 ### Usage
 
- Visit the app here!
+ Visit the app [here](https://dimitermusic.github.io/roman-numeral-converter.html/)!
 
 ### License
 
@@ -35,7 +35,7 @@ No tests at this time.
 
 ### Links
 
-[Deployed App]()  
+[Deployed App](https://dimitermusic.github.io/roman-numeral-converter.html/)  
 
 [Github](https://github.com/dimitermusic/roman-numeral-converter)  
 

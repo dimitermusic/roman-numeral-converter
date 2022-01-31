@@ -8,6 +8,13 @@ const romNumObj = {
     C: 100,
     D: 500,
     M: 1000,
+    i: 1,
+    v: 5,
+    x: 10,
+    l: 50,
+    c: 100,
+    d: 500,
+    m: 1000,
 }
 
 // Convert string of valid Roman Numeral characters into integer.

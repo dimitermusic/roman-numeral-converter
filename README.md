@@ -18,7 +18,7 @@ Simple App that converts Roman Numeral input to numeric values using JavaScript,
     - [Questions](#questions)
 
 ### Usage
-
+![Website](./assets/roman-numeral-converter.png)
  Visit the app [here](https://dimitermusic.github.io/roman-numeral-converter.html/)!
 
 ### License

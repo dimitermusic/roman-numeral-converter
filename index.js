@@ -1,3 +1,5 @@
+const convertBtn = document.querySelector("#convertBtn");
+const ansEl = document.querySelector("#answer");
 const romNumObj = {
     I: 1,
     V: 5,
@@ -8,17 +10,10 @@ const romNumObj = {
     M: 1000,
 }
 
-const romanNumConvert = (str) => {
+function romanNumConvert(str) {
 
     // Define variable that will accumulate Roman Numerals
     let sum = 0
-
-    // Check for invalid characters and return message if any
-    let invalidChars = str.split("").filter(char => !(char in romNumObj))
-    if (invalidChars.length > 0) {
-        console.log("Must contain only valid Roman Numeral characters (e.g. I, V, X, L, C, D, M)")
-        return
-    }
 
     // Return numeric value of single character Roman Numeral
     if (str.length === 1) return romNumObj[str];
@@ -39,7 +34,6 @@ const romanNumConvert = (str) => {
         } else if (romNumObj[currChar] > romNumObj[nextChar]) {
             sum += romNumObj[currChar]
         }
-
     }
 
     // Return final sum of string of Roman Numerals
@@ -47,4 +41,28 @@ const romanNumConvert = (str) => {
 
 }
 
-console.log(romanNumConvert("XIV"))
+// preventDefault to prevent page from refreshing when button is clicked
+// Taking in user input from html page, plugging that into our multiplication function, and dynamically rendering the answer to the page.
+function handleConversionDisplay(e) {
+
+    e.preventDefault();
+
+    const userInput = document.querySelector("#userInput").value;
+
+    // Check for invalid characters and return message if any
+    let invalidChars = userInput.split("").filter(char => !(char in romNumObj));
+
+    if (invalidChars.length > 0 || userInput === "") {
+
+        alert("Must contain only valid Roman Numeral characters (e.g. I, V, X, L, C, D, M)");
+        location.reload(true);
+
+    } else {
+        // If valid characters, convert using function and display to DOM
+        ansEl.textContent = `${romanNumConvert(userInput)}`;
+        console.log(`Roman Numeral ${userInput} equals ${romanNumConvert(userInput)}`);
+    }
+}
+
+// Method that runs dynamic rendering function when button is clicked.
+convertBtn.addEventListener("click", handleConversionDisplay);

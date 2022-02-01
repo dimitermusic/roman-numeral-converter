@@ -63,20 +63,19 @@ function handleConversionDisplay(e) {
     // preventDefault to prevent page from refreshing when button is clicked
     e.preventDefault();
 
+    // Select user input from text box on page
     const userInput = document.querySelector("#userInput").value;
 
-    // Check for invalid characters and return message if any
+    // Check for invalid characters and return message if any then refresh page
     let invalidChars = userInput.split("").filter(char => !(char in romNumObj));
-
     if (invalidChars.length > 0 || userInput === "") {
-
-        alert("Must contain only valid Roman Numeral characters (e.g. I, V, X, L, C, D, M)");
+        alert("Must contain valid Roman Numeral characters only (e.g. I, V, X, L, C, D, M)");
         location.reload(true);
 
     } else {
         // If valid characters, convert using function and display to DOM
         ansEl.textContent = `${romanNumConvert(userInput)}`;
-        // console.log(`Roman Numeral ${userInput} equals ${romanNumConvert(userInput)}`);
+        console.log(`Roman Numeral ${userInput} equals ${romanNumConvert(userInput)}`);
     }
 }
 

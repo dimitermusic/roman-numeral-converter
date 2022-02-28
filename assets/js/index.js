@@ -60,9 +60,6 @@ function romanNumConvert(str) {
 // Take user input, check if valid, plug into conversion function, render results to DOM.
 function handleConversionDisplay(e) {
 
-    // preventDefault to prevent page from refreshing when button is clicked
-    e.preventDefault();
-
     // Select user input from text box on page
     const userInput = document.querySelector("#userInput").value;
 
@@ -77,6 +74,10 @@ function handleConversionDisplay(e) {
         ansEl.textContent = `${romanNumConvert(userInput)}`;
         console.log(`Roman Numeral ${userInput} equals ${romanNumConvert(userInput)}`);
     }
+
+    // preventDefault to prevent page from refreshing when button is clicked
+
+    e.preventDefault();
 }
 
 // Method that runs dynamic rendering function when button is clicked.

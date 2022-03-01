@@ -7,18 +7,11 @@ const romNumObj = {
     L: 50,
     C: 100,
     D: 500,
-    M: 1000,
-    i: 1,
-    v: 5,
-    x: 10,
-    l: 50,
-    c: 100,
-    d: 500,
-    m: 1000,
+    M: 1000
 }
 
 // Convert string of valid Roman Numeral characters into integer.
-function romanNumConvert(str) {
+const romanNumConvert = (str) => {
 
     // Define variable that will accumulate Roman Numerals
     let sum = 0
@@ -40,15 +33,12 @@ function romanNumConvert(str) {
             // Skip over this next value since already accounted for
             i++
 
-        } else if (romNumObj[currChar] >= romNumObj[nextChar]) {
+            // If value to the right is greater or at the end of array, accumulate normally
+        } else if ((romNumObj[currChar] >= romNumObj[nextChar]) || (!(romNumObj[nextChar]))) {
 
-            // If value to the right is greater, accumulate normally
             sum += romNumObj[currChar]
 
-        } else
-
-            // Add the last character of the string to the sum
-            sum += romNumObj[currChar]
+        }
 
     }
 
@@ -58,16 +48,18 @@ function romanNumConvert(str) {
 }
 
 // Take user input, check if valid, plug into conversion function, render results to DOM.
-function handleConversionDisplay(e) {
+const handleConversionDisplay = (e) => {
+
+    // preventDefault to prevent page from refreshing when button is clicked
+    e.preventDefault();
 
     // Select user input from text box on page
-    const userInput = document.querySelector("#userInput").value;
-
+    const userInput = document.querySelector("#userInput").value.toUpperCase();
     // Check for invalid characters and return message if any then refresh page
     let invalidChars = userInput.split("").filter(char => !(char in romNumObj));
+
     if (invalidChars.length > 0 || userInput === "") {
         alert("Must contain valid Roman Numeral characters only (e.g. I, V, X, L, C, D, M)");
-        location.reload(true);
 
     } else {
         // If valid characters, convert using function and display to DOM
@@ -75,9 +67,7 @@ function handleConversionDisplay(e) {
         console.log(`Roman Numeral ${userInput} equals ${romanNumConvert(userInput)}`);
     }
 
-    // preventDefault to prevent page from refreshing when button is clicked
 
-    e.preventDefault();
 }
 
 // Method that runs dynamic rendering function when button is clicked.

@@ -1,6 +1,9 @@
+html, body {
+    height: 100%;
+}
+
 #main {
-    min-height: 50vh;
-    padding: 10px;
+    height: 100%;
 }
 
 .jumbotron {
@@ -42,6 +45,10 @@
 #userInput {
     width: 100px;
     height: 50px;
+}
+
+#answer {
+    font-size: calc(4rem + 1.5vw);
 }
 
 footer {

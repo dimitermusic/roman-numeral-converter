@@ -1,3 +1,4 @@
+const darkModeSwitch = document.querySelector("#dark-mode")
 const convertBtn = document.querySelector("#convertBtn");
 const ansEl = document.querySelector("#answer");
 const romNumObj = {
@@ -70,5 +71,80 @@ const handleConversionDisplay = (e) => {
 
 }
 
-// Method that runs dynamic rendering function when button is clicked.
+// Change page to dark mode with html switch
+const handleDarkModeSwitch = () => {
+
+    const jumbotron = document.getElementById("jumbotron");
+    const slider = document.getElementById("slider");
+    const main = document.getElementById("main");
+    const button = document.getElementById("convertBtn");
+    const userInput = document.getElementById("userInput");
+    const answer = document.getElementById("answer");
+    const footer = document.getElementById("footer");
+    const icon = document.getElementById("icon");
+
+    if (darkModeSwitch.checked) {
+
+        console.log("dark mode on");
+
+        jumbotron.classList.add("dark-mode-jumbotron");
+        slider.classList.add("dark-mode-slider");
+        main.classList.add("dark-mode-main");
+        button.classList.add("dark-mode-btn");
+        userInput.classList.add("dark-mode-userInput");
+        answer.classList.add("dark-mode-answer");
+        footer.classList.add("dark-mode-footer");
+        icon.classList.add("dark-mode-icon");
+    }
+
+    if (!(darkModeSwitch.checked)) {
+
+        console.log("dark mode off");
+
+        jumbotron.classList.remove("dark-mode-jumbotron");
+        slider.classList.remove("dark-mode-slider");
+        main.classList.remove("dark-mode-main");
+        button.classList.remove("dark-mode-btn");
+        userInput.classList.remove("dark-mode-userInput");
+        answer.classList.remove("dark-mode-answer");
+        footer.classList.remove("dark-mode-footer");
+        icon.classList.remove("dark-mode-icon");
+    }
+
+}
+
+// If it is between 8pm and 7am local time, automatically switch on Dark Mode at page load
+const handleDarkModeAuto = () => {
+
+    // Time conversion from 24hr to 12hr format
+    let now = new Date().getHours();
+    let modifier = ""
+    let darkModeOnOff = ""
+
+    if (darkModeSwitch.checked) {
+        darkModeOnOff = "on"
+    } else {
+        darkModeOnOff = "off"
+    }
+
+    if (now > 12) {
+        now -= 12
+        modifier = "PM"
+    } else if (now === 12) {
+        modifier = "PM"
+    } else {
+        modifier = "AM"
+    }
+
+    console.log(`Dark mode is currently ${darkModeOnOff} because it is currently ${now}${modifier}, and it is automatically scheduled between 7pm and 7am`);
+
+    if (now > 19 && now < 7) {
+        darkModeSwitch.checked = true
+        handleDarkModeSwitch();
+    }
+
+}
+
 convertBtn.addEventListener("click", handleConversionDisplay);
+darkModeSwitch.addEventListener("change", handleDarkModeSwitch);
+handleDarkModeAuto();

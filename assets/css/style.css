@@ -2,22 +2,124 @@ html, body {
     height: 100%;
 }
 
-#main {
-    height: 100%;
-    text-align: center;
+* {
+    transition: all .3s ease-out;
 }
 
 .jumbotron {
     background-color: rgb(238, 238, 238);
     width: 100%;
     height: 30vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.jumbotron h1 {
+.dark-mode-jumbotron {
+    background-color: rgb(70, 70, 70);
+    width: 100%;
+    height: 30vh;
+}
+
+.jumbotron h1, main h6 {
     color: rgb(57, 57, 57);
+    padding: 2rem;
+}
+
+.dark-mode-jumbotron h1,
+.dark-mode-jumbotron h6,
+.dark-mode-main h6 {
+    color: rgb(208, 208, 208);
+    padding: 2rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.dark-mode-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #ccc;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #ccc;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#switch-container h6 {
+    margin: auto;
+    padding: .5rem;
+    font-size: small;
+}
+
+main {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.dark-mode-main {
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
 .btn {
@@ -43,12 +145,47 @@ html, body {
     height: 50px;
 }
 
+.dark-mode-btn {
+    background-color: black;
+    color: #ccc;
+    border: none !important;
+    width: 100px;
+    height: 50px;
+}
+
+.dark-mode-btn:hover {
+    background-color: #ccc;
+    color: black;
+    width: 100px;
+    height: 50px;
+}
+
+.dark-mode-btn:focus {
+    background-color: #ccc;
+    color: black;
+    width: 100px;
+    height: 50px;
+}
+
 #userInput {
     width: 100px;
     height: 50px;
 }
 
+.dark-mode-userInput {
+    width: 100px;
+    height: 50px;
+    background-color: #ccc;
+    outline: none;
+    border: none;
+}
+
 #answer {
+    font-size: calc(4rem + 1.5vw);
+}
+
+.dark-mode-answer {
+    color: #ccc;
     font-size: calc(4rem + 1.5vw);
 }
 
@@ -62,10 +199,35 @@ footer {
     padding-bottom: 10px;
 }
 
+.dark-mode-footer {
+    background-color: rgb(70, 70, 70);
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
 .icon {
     color: black !important;
+    transition: all .3s ease-out;
+}
+
+.dark-mode-icon {
+    color: rgb(208, 208, 208) !important;
 }
 
 footer a {
     text-decoration: none;
+}
+
+.dark-mode-footer a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.dark-mode-footer a:hover {
+    text-decoration: none;
+    color: #ddd;
 }

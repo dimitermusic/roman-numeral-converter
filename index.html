@@ -14,23 +14,30 @@
 </head>
 
 <body class="d-flex flex-column align-items-center text-center">
-    <header class="jumbotron">
+    <header class="jumbotron d-flex flex-row flex-wrap justify-content-center align-items-center" id="jumbotron">
         <h1>Roman Numeral Converter</h1>
+        <div class="d-flex flex-row justify-content-center align-items-center" id="switch-container">
+            <label class="switch">
+                <input type="checkbox" id="dark-mode">
+                <span class="slider round" id="slider"></span>
+            </label>
+            <h6>Dark Mode</h6>
+        </div>
     </header>
-    <div id="main">
+    <main id="main">
         <h6 class="mt-5">Enter a Roman Numeral to convert to a number</h6>
         <form class="d-flex flex-column justify-content-center align-items-center mt-5">
             <input type="text" id="userInput">
             <button id="convertBtn" class="btn btn-primary mt-5">Convert!</button>
         </form>
         <h1 id="answer" class="m-5"></h1>
-    </div>
+    </main>
 
-    <footer>
+    <footer id="footer">
         <a href="https://www.github.com/dimitermusic/roman-numeral-converter" target="_blank">
             <span>
                 Check out my code on Github
-                <i class="fab fa-github icon mx-1"></i>
+                <i class="fab fa-github icon mx-1" id="icon"></i>
             </span>
         </a>
     </footer>

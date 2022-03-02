@@ -136,8 +136,9 @@ const handleDarkModeAuto = () => {
         modifier = "AM"
     }
 
-    console.log(`Dark mode is currently ${darkModeOnOff} because it is currently ${now}${modifier}, and it is automatically scheduled between 7pm and 7am`);
+    console.log(`Dark mode is currently ${darkModeOnOff} because it is currently ${now}${modifier}, and it is automatically scheduled between 8pm and 7am`);
 
+    // Dark mode
     if (now > 19 && now < 7) {
         darkModeSwitch.checked = true
         handleDarkModeSwitch();

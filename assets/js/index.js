@@ -1,6 +1,8 @@
 const darkModeSwitch = document.querySelector("#dark-mode")
 const convertBtn = document.querySelector("#convertBtn");
 const ansEl = document.querySelector("#answer");
+const modal = document.getElementById("modal");
+const span = document.getElementById("close");
 const romNumObj = {
     I: 1,
     V: 5,
@@ -48,6 +50,16 @@ const romanNumConvert = (str) => {
 
 }
 
+span.onclick = () => {
+    modal.style.display = "none";
+}
+
+window.onclick = (e) => {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 // Take user input, check if valid, plug into conversion function, render results to DOM.
 const handleConversionDisplay = (e) => {
 
@@ -60,7 +72,7 @@ const handleConversionDisplay = (e) => {
     let invalidChars = userInput.split("").filter(char => !(char in romNumObj));
 
     if (invalidChars.length > 0 || userInput === "") {
-        alert("Must contain valid Roman Numeral characters only (e.g. I, V, X, L, C, D, M)");
+        modal.style.display = "flex";
 
     } else {
         // If valid characters, convert using function and display to DOM
@@ -82,6 +94,8 @@ const handleDarkModeSwitch = () => {
     const answer = document.getElementById("answer");
     const footer = document.getElementById("footer");
     const icon = document.getElementById("icon");
+    const modalContent = document.getElementById("modal-content")
+
 
     if (darkModeSwitch.checked) {
 
@@ -95,6 +109,8 @@ const handleDarkModeSwitch = () => {
         answer.classList.add("dark-mode-answer");
         footer.classList.add("dark-mode-footer");
         icon.classList.add("dark-mode-icon");
+        modalContent.classList.add("dark-mode-modal-content")
+        span.classList.add("dark-mode-btn")
     }
 
     if (!(darkModeSwitch.checked)) {
@@ -109,6 +125,8 @@ const handleDarkModeSwitch = () => {
         answer.classList.remove("dark-mode-answer");
         footer.classList.remove("dark-mode-footer");
         icon.classList.remove("dark-mode-icon");
+        modalContent.classList.remove("dark-mode-modal-content")
+        span.classList.remove("dark-mode-btn")
     }
 
 }
@@ -117,7 +135,8 @@ const handleDarkModeSwitch = () => {
 const handleDarkModeAuto = () => {
 
     // Time conversion from 24hr to 12hr format
-    let now = new Date().getHours();
+    let hour = new Date().getHours();
+    let minutes = new Date().getMinutes();
     let modifier = ""
     let darkModeOnOff = ""
 
@@ -127,19 +146,19 @@ const handleDarkModeAuto = () => {
         darkModeOnOff = "off"
     }
 
-    if (now > 12) {
-        now -= 12
+    if (hour > 12) {
+        hour -= 12
         modifier = "PM"
-    } else if (now === 12) {
+    } else if (hour === 12) {
         modifier = "PM"
     } else {
         modifier = "AM"
     }
 
-    console.log(`Dark mode is currently ${darkModeOnOff} because it is currently ${now}${modifier}, and it is automatically scheduled between 8pm and 7am`);
+    console.log(`Dark mode is currently ${darkModeOnOff} because it is currently ${hour}:${minutes}${modifier}, and it is automatically scheduled between 8pm and 7am`);
 
     // Dark mode
-    if (now > 19 && now < 7) {
+    if (hour > 19 && hour < 7) {
         darkModeSwitch.checked = true
         handleDarkModeSwitch();
     }

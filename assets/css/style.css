@@ -115,6 +115,7 @@ main {
 }
 
 .btn {
+    color: #fff;
     background-color: rgb(117, 65, 207);
     width: 100px;
     height: 50px;
@@ -138,11 +139,7 @@ main {
     border: none !important;
 }
 
-.dark-mode-btn:hover {
-    background-color: #ccc;
-    color: rgb(43, 43, 43);
-}
-
+.dark-mode-btn:hover,
 .dark-mode-btn:focus {
     background-color: #ccc;
     color: rgb(43, 43, 43);
@@ -165,6 +162,38 @@ main {
 
 .dark-mode-answer {
     color: #ccc;
+}
+
+.modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: fit-content;
+}
+
+.dark-mode-modal-content {
+    color: #ccc;
+    background-color: rgb(57, 57, 57);
+    border: none;
 }
 
 footer {

@@ -1,9 +1,9 @@
-html, body {
-    height: 100%;
-}
-
 * {
     transition: all .3s ease-out;
+}
+
+html, body {
+    height: 100%;
 }
 
 .jumbotron {
@@ -13,12 +13,12 @@ html, body {
 }
 
 .dark-mode-jumbotron {
-    background-color: rgb(70, 70, 70);
-    width: 100%;
-    height: 30vh;
+    background-color: rgb(43, 43, 43);
 }
 
-.jumbotron h1, main h6 {
+.jumbotron h1,
+.jumbotron h6,
+main h6 {
     color: rgb(57, 57, 57);
     padding: 2rem;
 }
@@ -27,7 +27,10 @@ html, body {
 .dark-mode-jumbotron h6,
 .dark-mode-main h6 {
     color: rgb(208, 208, 208);
-    padding: 2rem;
+}
+
+#switch-container {
+    padding: 1rem;
 }
 
 .switch {
@@ -68,15 +71,7 @@ html, body {
 }
 
 .dark-mode-slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
     background-color: black;
-    -webkit-transition: .4s;
-    transition: .4s;
 }
 
 input:checked+.slider {
@@ -116,15 +111,11 @@ main {
 }
 
 .dark-mode-main {
-    background-color: rgb(34, 34, 34);
-    width: 100%;
-    height: 100%;
-    text-align: center;
+    background-color: rgb(24, 24, 24);
 }
 
 .btn {
     background-color: rgb(117, 65, 207);
-    border: none;
     width: 100px;
     height: 50px;
 }
@@ -133,51 +124,39 @@ main {
     background-color: white;
     color: rgb(117, 65, 207);
     border: solid 1px rgb(117, 65, 207);
-    width: 100px;
-    height: 50px;
 }
 
 .btn:focus {
     background-color: white;
     color: rgb(117, 65, 207);
     border: solid 1px rgb(117, 65, 207);
-    width: 100px;
-    height: 50px;
 }
 
 .dark-mode-btn {
-    background-color: black;
+    background-color: rgb(43, 43, 43);
     color: #ccc;
     border: none !important;
-    width: 100px;
-    height: 50px;
 }
 
 .dark-mode-btn:hover {
     background-color: #ccc;
-    color: black;
-    width: 100px;
-    height: 50px;
+    color: rgb(43, 43, 43);
 }
 
 .dark-mode-btn:focus {
     background-color: #ccc;
-    color: black;
-    width: 100px;
-    height: 50px;
+    color: rgb(43, 43, 43);
 }
 
 #userInput {
     width: 100px;
     height: 50px;
+    outline: none;
+    border: solid 1px rgb(57, 57, 57);
 }
 
 .dark-mode-userInput {
-    width: 100px;
-    height: 50px;
     background-color: #ccc;
-    outline: none;
-    border: none;
 }
 
 #answer {
@@ -186,27 +165,20 @@ main {
 
 .dark-mode-answer {
     color: #ccc;
-    font-size: calc(4rem + 1.5vw);
 }
 
 footer {
     background-color: rgb(238, 238, 238);
     width: 100%;
-    height: 20vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding-bottom: 10px;
 }
 
 .dark-mode-footer {
-    background-color: rgb(70, 70, 70);
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 10px;
+    background-color: rgb(43, 43, 43);
 }
 
 .icon {
@@ -220,14 +192,13 @@ footer {
 
 footer a {
     text-decoration: none;
+    padding: 3rem;
 }
 
 .dark-mode-footer a {
-    text-decoration: none;
     color: #ccc;
 }
 
 .dark-mode-footer a:hover {
-    text-decoration: none;
-    color: #ddd;
+    color: #fff;
 }

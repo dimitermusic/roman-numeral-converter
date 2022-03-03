@@ -1,5 +1,5 @@
 * {
-    transition: all .3s ease-out;
+    transition: all .3s ease-in-out;
 }
 
 html {
@@ -63,8 +63,8 @@ main h6 {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .3s;
-    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .slider:before {
@@ -75,9 +75,9 @@ main h6 {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .3s;
-    -webkit-transition: -webkit-transform .3s;
-    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-in-out;
+    -webkit-transition: -webkit-transform all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .dark-mode-slider:before {
@@ -85,11 +85,11 @@ main h6 {
 }
 
 input:checked+.slider {
-    background-color: #ccc;
+    background-color: #ddd;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #ccc;
+    box-shadow: 0 0 1px #ddd;
 }
 
 input:checked+.slider:before {
@@ -223,7 +223,7 @@ footer {
 
 .icon {
     color: black !important;
-    transition: all .3s ease-out;
+    transition: all .3s ease-in-out;
 }
 
 .dark-mode-icon {

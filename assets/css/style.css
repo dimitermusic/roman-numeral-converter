@@ -12,7 +12,7 @@ body {
 }
 
 .dark-mode-body {
-    background-color: rgb(43, 43, 43);
+    background-color: rgb(36, 36, 36);
 }
 
 .jumbotron {
@@ -22,7 +22,7 @@ body {
 }
 
 .dark-mode-jumbotron {
-    background-color: rgb(43, 43, 43);
+    background-color: rgb(36, 36, 36);
 }
 
 .jumbotron h1,
@@ -120,7 +120,7 @@ main {
 }
 
 .dark-mode-main {
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(18, 18, 18);
 }
 
 .btn {
@@ -143,7 +143,7 @@ main {
 }
 
 .dark-mode-btn {
-    background-color: rgb(43, 43, 43);
+    background-color: rgb(70, 70, 70);
     color: #ccc;
     border: none !important;
 }
@@ -151,7 +151,7 @@ main {
 .dark-mode-btn:hover,
 .dark-mode-btn:focus {
     background-color: #ccc;
-    color: rgb(43, 43, 43);
+    color: rgb(70, 70, 70);
 }
 
 #userInput {
@@ -201,7 +201,7 @@ main {
 
 .dark-mode-modal-content {
     color: #ccc;
-    background-color: rgb(57, 57, 57);
+    background-color: rgb(36, 36, 36);
     border: none;
 }
 

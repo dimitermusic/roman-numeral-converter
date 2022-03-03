@@ -1,6 +1,6 @@
-const darkModeSwitch = document.querySelector("#dark-mode")
-const convertBtn = document.querySelector("#convertBtn");
-const ansEl = document.querySelector("#answer");
+const darkModeSwitch = document.getElementById("dark-mode")
+const convertBtn = document.getElementById("convertBtn");
+const ansEl = document.getElementById("answer");
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("close");
 const romNumObj = {
@@ -141,11 +141,38 @@ const handleDarkModeSwitch = () => {
 // If it is between 8pm and 7am local time, automatically switch on Dark Mode at page load.
 const handleDarkModeAuto = () => {
 
-    // Time conversion from 24hr to 12hr format
     let hour = new Date().getHours();
     let minutes = new Date().getMinutes();
     let modifier = ""
     let darkModeOnOff = ""
+
+    // Time conversion from 24hr to 12hr format
+    if (hour > 12) {
+        hour -= 12
+        modifier = "PM"
+    } else if (hour === 00) {
+        hour += 12
+        modifier = "AM"
+    } else if (hour === 12) {
+        modifier = "PM"
+    } else {
+        modifier = "AM"
+    }
+
+    // Adding 0 to beginning of single digit minutes
+    if (minutes.toString().length === 1) {
+        minutes = `0${minutes}`
+    }
+
+    // Dark mode automatically scheduled based on local time
+    if ((hour >= 8 && hour !== 12 && modifier === "PM") || (hour <= 7 && modifier === "AM")) {
+        darkModeSwitch.checked = true
+        handleDarkModeSwitch();
+    } else {
+
+        darkModeSwitch.checked = false
+        handleDarkModeSwitch();
+    }
 
     if (darkModeSwitch.checked) {
         darkModeOnOff = "on"
@@ -153,22 +180,7 @@ const handleDarkModeAuto = () => {
         darkModeOnOff = "off"
     }
 
-    if (hour > 12) {
-        hour -= 12
-        modifier = "PM"
-    } else if (hour === 12) {
-        modifier = "PM"
-    } else {
-        modifier = "AM"
-    }
-
-    console.log(`Dark Mode is currently ${darkModeOnOff} because the time is ${hour}:${minutes}${modifier}, and it is automatically scheduled to be on between 8pm and 7am`);
-
-    // Dark mode
-    if (hour > 19 && hour < 7) {
-        darkModeSwitch.checked = true
-        handleDarkModeSwitch();
-    }
+    console.log(`Dark Mode is currently ${darkModeOnOff} because the time is ${hour}:${minutes}${modifier}, and it is automatically scheduled to be on between 8pm and 7am`)
 
 }
 

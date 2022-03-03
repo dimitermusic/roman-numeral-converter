@@ -64,7 +64,7 @@ main h6 {
     bottom: 0;
     background-color: #ccc;
     -webkit-transition: .3s;
-    transition: .3s;
+    transition: all .3s ease-out;
 }
 
 .slider:before {
@@ -76,7 +76,8 @@ main h6 {
     bottom: 4px;
     background-color: white;
     -webkit-transition: .3s;
-    transition: .3s;
+    -webkit-transition: -webkit-transform .3s;
+    transition: all .3s ease-out;
 }
 
 .dark-mode-slider:before {

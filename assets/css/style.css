@@ -1,5 +1,5 @@
 * {
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 html {
@@ -64,7 +64,6 @@ main h6 {
     bottom: 0;
     background-color: #ccc;
     -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
 }
 
 .slider:before {
@@ -77,7 +76,6 @@ main h6 {
     background-color: white;
     -webkit-transition: all .3s ease-in-out;
     -webkit-transition: -webkit-transform all .3s ease-in-out;
-    transition: all .3s ease-in-out;
 }
 
 .dark-mode-slider:before {
@@ -128,8 +126,11 @@ main {
 .btn {
     color: #fff;
     background-color: rgb(117, 65, 207);
+    border: solid 1px rgb(117, 65, 207);
     width: 100px;
     height: 50px;
+    outline: none;
+    transition: all .3s ease-in-out !important;
 }
 
 .btn:hover {
@@ -147,7 +148,7 @@ main {
 .dark-mode-btn {
     background-color: rgb(70, 70, 70);
     color: #ccc;
-    border: none !important;
+    border: solid 1px rgb(70, 70, 70) !important;
 }
 
 .dark-mode-btn:hover,
@@ -221,18 +222,20 @@ footer {
     background-color: rgb(36, 36, 36);
 }
 
-.icon {
-    color: black !important;
-    transition: all .3s ease-in-out;
-}
-
-.dark-mode-icon {
-    color: rgb(208, 208, 208) !important;
+#icon {
+    color: rgb(140, 140, 140);
 }
 
 footer a {
     text-decoration: none;
-    padding: 2rem;
+    margin: 2rem;
+    color: #0d6dfb;
+    transition: none !important
+}
+
+footer a:hover,
+footer a:focus {
+    color: #235bc3;
 }
 
 .dark-mode-footer a {

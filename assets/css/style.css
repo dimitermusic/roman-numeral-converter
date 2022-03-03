@@ -168,7 +168,7 @@ main {
 }
 
 #answer {
-    font-size: calc(3rem + 1.5vw);
+    font-size: calc(4rem + 1.5vw);
 }
 
 .dark-mode-answer {

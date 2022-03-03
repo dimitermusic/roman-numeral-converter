@@ -91,6 +91,7 @@ const handleConversionDisplay = (e) => {
 // Change page to dark mode with html switch.
 const handleDarkModeSwitch = () => {
 
+    const body = document.getElementById("body");
     const jumbotron = document.getElementById("jumbotron");
     const slider = document.getElementById("slider");
     const main = document.getElementById("main");
@@ -101,11 +102,11 @@ const handleDarkModeSwitch = () => {
     const icon = document.getElementById("icon");
     const modalContent = document.getElementById("modal-content")
 
-
     if (darkModeSwitch.checked) {
 
         console.log("dark mode on");
 
+        body.classList.add("dark-mode-body")
         jumbotron.classList.add("dark-mode-jumbotron");
         slider.classList.add("dark-mode-slider");
         main.classList.add("dark-mode-main");
@@ -122,6 +123,7 @@ const handleDarkModeSwitch = () => {
 
         console.log("dark mode off");
 
+        body.classList.remove("dark-mode-body")
         jumbotron.classList.remove("dark-mode-jumbotron");
         slider.classList.remove("dark-mode-slider");
         main.classList.remove("dark-mode-main");
@@ -160,7 +162,7 @@ const handleDarkModeAuto = () => {
         modifier = "AM"
     }
 
-    console.log(`Dark mode is currently ${darkModeOnOff} because it is ${hour}:${minutes}${modifier} and is automatically scheduled between 8pm and 7am`);
+    console.log(`Dark Mode is currently ${darkModeOnOff} because the time is ${hour}:${minutes}${modifier}, and it is automatically scheduled to be on between 8pm and 7am`);
 
     // Dark mode
     if (hour > 19 && hour < 7) {

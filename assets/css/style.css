@@ -2,8 +2,17 @@
     transition: all .3s ease-out;
 }
 
-html, body {
+html {
     height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: rgb(238, 238, 238);
+}
+
+.dark-mode-body {
+    background-color: rgb(43, 43, 43);
 }
 
 .jumbotron {

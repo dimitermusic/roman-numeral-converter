@@ -165,7 +165,7 @@ const handleDarkModeAuto = () => {
     }
 
     // Dark mode automatically scheduled based on local time
-    if ((hour >= 8 && modifier === "PM") || ((hour <= 7 || hour === 12) && modifier === "AM")) {
+    if ((hour >= 8 && hour !== 12 && modifier === "PM") || ((hour <= 7 || hour === 12) && modifier === "AM")) {
         darkModeSwitch.checked = true
         handleDarkModeSwitch();
     } else {

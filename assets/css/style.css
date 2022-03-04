@@ -1,5 +1,6 @@
 * {
-    transition: all .2s ease-in-out;
+    transition: all .2s;
+    -webkit-transition: all .2s;
 }
 
 html {
@@ -62,9 +63,8 @@ main h6 {
     left: 0;
     right: 0;
     bottom: 0;
+    border-radius: 34px;
     background-color: #ccc;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
 }
 
 .slider:before {
@@ -74,10 +74,9 @@ main h6 {
     width: 26px;
     left: 4px;
     bottom: 4px;
+    border-radius: 50%;
     background-color: white;
-    -webkit-transition: all .2s ease-in-out;
-    -webkit-transition: -webkit-transform all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+    -webkit-transition: -webkit-transform .2s;
 }
 
 .dark-mode-slider:before {
@@ -96,15 +95,6 @@ input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
 }
 
 #switch-container h6 {
@@ -132,7 +122,7 @@ main {
     width: 100px;
     height: 50px;
     outline: none;
-    transition: all .2s ease-in-out !important;
+    transition: all .2s !important;
 }
 
 .btn:hover {

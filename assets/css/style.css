@@ -83,11 +83,11 @@ main h6 {
 }
 
 .dark-mode-slider:before {
-    background-color: black;
+    background-color: rgb(18, 18, 18);
 }
 
 input:checked+.slider {
-    background-color: #ddd;
+    background-color: rgb(147, 147, 147);
 }
 
 input:focus+.slider {

@@ -139,7 +139,7 @@ const handleDarkModeStyle = () => {
 
     if (!(darkModeSwitch.checked)) {
 
-        console.log("Dark mode off ☀️");
+        console.log("Dark mode off 🌞");
 
         // Remove dark mode classes when switched off.
         body.classList.remove("dark-mode-body")

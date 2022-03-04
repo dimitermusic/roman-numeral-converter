@@ -1,6 +1,5 @@
 * {
     transition: all .2s ease-out;
-    -webkit-transition: all .2s ease-out;
 }
 
 html {
@@ -77,6 +76,7 @@ main h6 {
     border-radius: 50%;
     background-color: white;
     -webkit-transition: -webkit-transform .2s ease-out;
+    transition: all .2s ease-out;
 }
 
 .dark-mode-slider:before {

@@ -118,13 +118,15 @@ main {
     background-color: rgb(18, 18, 18);
 }
 
-.btn {
+.btn,
+.btn:focus {
     color: #fff;
     background-color: rgb(117, 65, 207);
     border: solid 1px rgb(117, 65, 207);
     width: 100px;
     height: 50px;
-    outline: none;
+    outline: none !important;
+    box-shadow: none !important;
     transition: all .2s ease-out !important;
 }
 
@@ -134,29 +136,18 @@ main {
     border: solid 1px rgb(117, 65, 207);
 }
 
-.btn:focus {
-    color: #fff;
-    background-color: rgb(117, 65, 207);
-    border: solid 1px rgb(117, 65, 207);
-    outline: none !important;
-}
-
-.dark-mode-btn {
-    background-color: rgb(70, 70, 70);
-    color: #ccc;
-    border: solid 1px rgb(70, 70, 70) !important;
-}
-
-.dark-mode-btn:hover {
-    background-color: #ccc;
-    color: rgb(70, 70, 70);
-}
-
+.dark-mode-btn,
 .dark-mode-btn:focus {
     background-color: rgb(70, 70, 70);
     color: #ccc;
     border: solid 1px rgb(70, 70, 70) !important;
     outline: none !important;
+    box-shadow: none !important;
+}
+
+.dark-mode-btn:hover {
+    background-color: #ccc;
+    color: rgb(70, 70, 70);
 }
 
 #text-area {

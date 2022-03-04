@@ -135,9 +135,10 @@ main {
 }
 
 .btn:focus {
-    background-color: white;
-    color: rgb(117, 65, 207);
+    color: #fff;
+    background-color: rgb(117, 65, 207);
     border: solid 1px rgb(117, 65, 207);
+    outline: none !important;
 }
 
 .dark-mode-btn {
@@ -146,20 +147,26 @@ main {
     border: solid 1px rgb(70, 70, 70) !important;
 }
 
-.dark-mode-btn:hover,
-.dark-mode-btn:focus {
+.dark-mode-btn:hover {
     background-color: #ccc;
     color: rgb(70, 70, 70);
 }
 
-#userInput {
+.dark-mode-btn:focus {
+    background-color: rgb(70, 70, 70);
+    color: #ccc;
+    border: solid 1px rgb(70, 70, 70) !important;
+    outline: none !important;
+}
+
+#text-area {
     width: 100px;
     height: 50px;
     outline: none;
     border: solid 1px rgb(57, 57, 57);
 }
 
-.dark-mode-userInput {
+.dark-mode-text-area {
     background-color: #ccc;
 }
 

@@ -59,7 +59,8 @@ const handleConversionDisplay = (e) => {
     e.preventDefault();
 
     // Select user input from text box on page and change to uppercase.
-    const userInput = document.querySelector("#userInput").value.toUpperCase();
+    const textArea = document.getElementById("text-area")
+    const userInput = document.getElementById("text-area").value.toUpperCase();
     // Define array with any invalid characters from input.
     let invalidChars = userInput.split("").filter(char => !(char in romNumObj));
 
@@ -67,6 +68,7 @@ const handleConversionDisplay = (e) => {
     if (invalidChars.length > 0 || userInput === "") {
 
         modal.style.display = "flex";
+        closeModal.focus()
 
     } else {
 
@@ -80,11 +82,20 @@ const handleConversionDisplay = (e) => {
 
         closeModal.onclick = () => {
             modal.style.display = "none";
+            textArea.focus()
         }
 
         window.onclick = (e) => {
             if (e.target == modal) {
                 modal.style.display = "none";
+                textArea.focus()
+            }
+        }
+
+        window.onkeypress = (e) => {
+            if (e.key === "Enter") {
+                closeModal.click();
+                textArea.focus()
             }
         }
 
@@ -102,7 +113,7 @@ const handleDarkModeStyle = () => {
     const slider = document.getElementById("slider");
     const main = document.getElementById("main");
     const button = document.getElementById("convertBtn");
-    const userInput = document.getElementById("userInput");
+    const textArea = document.getElementById("text-area");
     const answer = document.getElementById("answer");
     const footer = document.getElementById("footer");
     const icon = document.getElementById("icon");
@@ -118,7 +129,7 @@ const handleDarkModeStyle = () => {
         slider.classList.add("dark-mode-slider");
         main.classList.add("dark-mode-main");
         button.classList.add("dark-mode-btn");
-        userInput.classList.add("dark-mode-userInput");
+        textArea.classList.add("dark-mode-text-area");
         answer.classList.add("dark-mode-answer");
         footer.classList.add("dark-mode-footer");
         icon.classList.add("dark-mode-icon");
@@ -136,7 +147,7 @@ const handleDarkModeStyle = () => {
         slider.classList.remove("dark-mode-slider");
         main.classList.remove("dark-mode-main");
         button.classList.remove("dark-mode-btn");
-        userInput.classList.remove("dark-mode-userInput");
+        textArea.classList.remove("dark-mode-text-area");
         answer.classList.remove("dark-mode-answer");
         footer.classList.remove("dark-mode-footer");
         icon.classList.remove("dark-mode-icon");

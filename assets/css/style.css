@@ -78,7 +78,7 @@ main h6 {
     border-radius: 50%;
     background-color: white;
     -webkit-transition: .2s;
-    -webkit-transition: -webkit-transform .2s;
+    -webkit-transition: -webkit-transform .2s ease-out;
     transition: all .2s ease-out;
 }
 

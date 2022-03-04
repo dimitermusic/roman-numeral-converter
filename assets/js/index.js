@@ -121,7 +121,7 @@ const handleDarkModeStyle = () => {
 
     if (darkModeSwitch.checked) {
 
-        console.log("Dark mode on.");
+        console.log("Dark mode on 🌙");
 
         // Add dark mode classes when switched on.
         body.classList.add("dark-mode-body")
@@ -139,7 +139,7 @@ const handleDarkModeStyle = () => {
 
     if (!(darkModeSwitch.checked)) {
 
-        console.log("Dark mode off.");
+        console.log("Dark mode off ☀️");
 
         // Remove dark mode classes when switched off.
         body.classList.remove("dark-mode-body")
@@ -203,7 +203,7 @@ const handleDarkModeAuto = () => {
             minutes = `0${minutes}`
         }
 
-        console.log(`Dark Mode is currently ${darkModeOnOff} because the time is ${hour}:${minutes}${modifier}, and it is automatically scheduled to be on between 8pm and 7am`)
+        console.log(`Dark Mode is currently ${darkModeOnOff} because the time is ${hour}:${minutes}${modifier}, and it is automatically scheduled to be on between 8pm and 7am.`)
 
     }
 

@@ -4,7 +4,7 @@
 
 ## Description
 
-Simple App that converts Roman Numeral input to numeric values using JavaScript, HTML, and Bootsrap.
+Simple and clean Roman Numeral converter app with switchable and automatically scheduled dark mode.
 
 ## Table of Contents
 - [Roman Numeral Converter](#roman-numeral-converter)

@@ -81,6 +81,8 @@ main h6 {
 
 .dark-mode-slider:before {
     background-color: black;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 input:checked+.slider {

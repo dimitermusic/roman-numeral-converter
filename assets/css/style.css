@@ -132,7 +132,7 @@ main {
     width: 100px;
     height: 50px;
     outline: none;
-    transition: all .3s ease-in-out !important;
+    transition: all .2s ease-in-out !important;
 }
 
 .btn:hover {
@@ -224,7 +224,7 @@ footer {
     background-color: rgb(36, 36, 36);
 }
 
-#icon {
+.icon {
     color: rgb(140, 140, 140);
 }
 

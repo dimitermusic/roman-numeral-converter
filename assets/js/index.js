@@ -1,8 +1,7 @@
+// Select elements from DOM.
 const darkModeSwitch = document.getElementById("dark-mode")
 const convertBtn = document.getElementById("convertBtn");
-const ansEl = document.getElementById("answer");
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("close");
+// Define roman numeral dictionary.
 const romNumObj = {
     I: 1,
     V: 5,
@@ -19,7 +18,7 @@ const romanNumConvert = (str) => {
     // Define variable that will accumulate Roman Numerals.
     let sum = 0
 
-    // Return numeric value of single character Roman Numeral.
+    // Return if single character.
     if (str.length === 1) return romNumObj[str];
 
     // If more than a single character, loop over string to accumulate value.
@@ -50,48 +49,55 @@ const romanNumConvert = (str) => {
 
 }
 
-// Close model by clickng on button or outside of modal.
-const handleCloseModal = () => {
-
-    closeModal.onclick = () => {
-        modal.style.display = "none";
-    }
-
-    window.onclick = (e) => {
-        if (e.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-}
-
 // Take user input, check if valid, plug into conversion function, render results to DOM.
 const handleConversionDisplay = (e) => {
 
     // preventDefault() to prevent page from refreshing when button is clicked.
     e.preventDefault();
 
+    const ansEl = document.getElementById("answer");
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("close");
+
     // Select user input from text box on page.
     const userInput = document.querySelector("#userInput").value.toUpperCase();
     // Check for invalid characters and return message if any then refresh page.
     let invalidChars = userInput.split("").filter(char => !(char in romNumObj));
 
+    // If input is invalid, display custom modal, else use conversion function to dynamically display result.
     if (invalidChars.length > 0 || userInput === "") {
+
         modal.style.display = "flex";
 
     } else {
-        // If valid characters, convert using function and display to DOM.
+
         ansEl.textContent = `${romanNumConvert(userInput)}`;
         console.log(`Roman Numeral ${userInput} equals ${romanNumConvert(userInput)}`);
+
     }
 
+    // Close model by clickng on button or outside of modal.
+    const handleCloseModal = () => {
+
+        closeModal.onclick = () => {
+            modal.style.display = "none";
+        }
+
+        window.onclick = (e) => {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    }
+
+    handleCloseModal();
 
 }
 
-// Change page to dark mode with html switch.
+// Change page styling between light and dark mode based on state of switch.
 const handleDarkModeStyle = () => {
 
-    // Select elements from DOM.
     const body = document.getElementById("body");
     const jumbotron = document.getElementById("jumbotron");
     const slider = document.getElementById("slider");
@@ -141,7 +147,7 @@ const handleDarkModeStyle = () => {
 
 }
 
-// If it is between 8pm and 7am local time, automatically switch on Dark Mode at page load.
+// If it is between 8pm and 7am local time, automatically switch on dark mode at page load.
 const handleDarkModeAuto = () => {
 
     // Current time.
@@ -149,11 +155,15 @@ const handleDarkModeAuto = () => {
 
     // Dark mode automatically turns on based on set schedule.
     if (hour > 6 && hour < 20) {
+
         darkModeSwitch.checked = false
         handleDarkModeStyle();
+
     } else {
+
         darkModeSwitch.checked = true
         handleDarkModeStyle();
+
     }
 
     // Convert time from 24hr to 12hr format and display dynamic message to console log
@@ -192,7 +202,6 @@ const handleDarkModeAuto = () => {
 }
 
 // Call function expressions and listen for events.
-convertBtn.addEventListener("click", handleConversionDisplay);
-darkModeSwitch.addEventListener("change", handleDarkModeStyle);
 handleDarkModeAuto();
-handleCloseModal();
+darkModeSwitch.addEventListener("change", handleDarkModeStyle);
+convertBtn.addEventListener("click", handleConversionDisplay);

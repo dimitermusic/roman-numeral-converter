@@ -87,7 +87,7 @@ main h6 {
 }
 
 input:checked+.slider {
-    background-color: rgb(147, 147, 147);
+    background-color: rgb(208, 208, 208);
 }
 
 input:focus+.slider {

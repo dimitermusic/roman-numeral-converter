@@ -1,5 +1,5 @@
 * {
-    transition: all .2s ease-out;
+    transition: all .2s ease-in-out;
 }
 
 html {
@@ -75,8 +75,8 @@ main h6 {
     bottom: 4px;
     border-radius: 50%;
     background-color: white;
-    -webkit-transition: -webkit-transform .2s ease-out;
-    transition: all .2s ease-out;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .dark-mode-slider:before {
@@ -122,7 +122,7 @@ main {
     width: 100px;
     height: 50px;
     outline: none;
-    transition: all .2s ease-out !important;
+    transition: all .2s ease-in-out !important;
 }
 
 .btn:hover {

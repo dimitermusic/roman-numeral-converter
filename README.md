@@ -19,7 +19,7 @@ Simple and clean Roman Numeral converter app with switchable and automatically s
 
 ### Usage
 ![Website](./assets/roman-numeral-converter.png)
- Visit the app [here](https://dimitermusic.github.io/roman-numeral-converter.html/)!
+ Visit the app [here](https://romnum.netlify.app)!
 
 ### License
 
@@ -35,7 +35,7 @@ No tests at this time.
 
 ### Links
 
-[Deployed App](https://dimitermusic.github.io/roman-numeral-converter.html/)  
+[Deployed App](https://romnum.netlify.app)  
 
 [Github](https://github.com/dimitermusic/roman-numeral-converter)  
 

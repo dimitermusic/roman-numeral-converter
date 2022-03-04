@@ -63,7 +63,8 @@ main h6 {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: all .3s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .slider:before {
@@ -74,8 +75,9 @@ main h6 {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: all .3s ease-in-out;
-    -webkit-transition: -webkit-transform all .3s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -webkit-transition: -webkit-transform all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .dark-mode-slider:before {

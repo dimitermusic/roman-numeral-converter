@@ -171,8 +171,6 @@ const handleDarkModeAuto = () => {
         minutes = `0${minutes}`
     }
 
-    console.log(typeof minutes);
-
     // Dark mode automatically turns on based on set schedule.
     if ((darkPmHours.includes(hour) && modifier === "PM") || (darkAmHours.includes(hour) && modifier === "AM")) {
         darkModeSwitch.checked = true

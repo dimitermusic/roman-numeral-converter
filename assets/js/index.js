@@ -89,7 +89,7 @@ const handleConversionDisplay = (e) => {
 }
 
 // Change page to dark mode with html switch.
-const handleDarkModeSwitch = () => {
+const handleDarkModeStyle = () => {
 
     // Select elements from DOM.
     const body = document.getElementById("body");
@@ -144,51 +144,55 @@ const handleDarkModeSwitch = () => {
 // If it is between 8pm and 7am local time, automatically switch on Dark Mode at page load.
 const handleDarkModeAuto = () => {
 
-    // Set range of hours to include in dark mode logic.
-    let darkPmHours = [8, 9, 10, 11]
-    let darkAmHours = [12, 1, 2, 3, 4, 5, 6]
     // Current time.
     let hour = new Date().getHours();
-    let minutes = new Date().getMinutes();
-    let modifier = ""
-    let darkModeOnOff = ""
-
-    // Time conversion from 24hr to 12hr format.
-    if (hour > 12) {
-        hour -= 12
-        modifier = "PM"
-    } else if (hour === 00) {
-        hour += 12
-        modifier = "AM"
-    } else if (hour === 12) {
-        modifier = "PM"
-    } else {
-        modifier = "AM"
-    }
-
-    // Adding 0 to beginning of single digit minutes.
-    if (minutes.toString().length === 1) {
-        minutes = `0${minutes}`
-    }
 
     // Dark mode automatically turns on based on set schedule.
-    if ((darkPmHours.includes(hour) && modifier === "PM") || (darkAmHours.includes(hour) && modifier === "AM")) {
-        darkModeSwitch.checked = true
-        handleDarkModeSwitch();
-    } else {
+    if (hour > 6 && hour < 20) {
         darkModeSwitch.checked = false
-        handleDarkModeSwitch();
+        handleDarkModeStyle();
+    } else {
+        darkModeSwitch.checked = true
+        handleDarkModeStyle();
     }
 
-    // Ternary operator to dynamically display if dark mode is on or off.
-    (darkModeSwitch.checked ? darkModeOnOff = "on" : darkModeOnOff = "off")
+    // Convert time from 24hr to 12hr format and display dynamic message to console log
+    const handleTimeConversion = () => {
+        let minutes = new Date().getMinutes();
+        let modifier = ""
+        let darkModeOnOff = ""
 
-    console.log(`Dark Mode is currently ${darkModeOnOff} because the time is ${hour}:${minutes}${modifier}, and it is automatically scheduled to be on between 8pm and 7am`)
+        // Time conversion from 24hr to 12hr format.
+        if (hour > 12) {
+            hour -= 12
+            modifier = "PM"
+        } else if (hour === 00) {
+            hour += 12
+            modifier = "AM"
+        } else if (hour === 12) {
+            modifier = "PM"
+        } else {
+            modifier = "AM"
+        }
+
+        // Ternary operator to dynamically display if dark mode is on or off.
+        (darkModeSwitch.checked ? darkModeOnOff = "on" : darkModeOnOff = "off")
+
+        // Adding 0 to beginning of single digit minutes.
+        if (minutes.toString().length === 1) {
+            minutes = `0${minutes}`
+        }
+
+        console.log(`Dark Mode is currently ${darkModeOnOff} because the time is ${hour}:${minutes}${modifier}, and it is automatically scheduled to be on between 8pm and 7am`)
+
+    }
+
+    handleTimeConversion();
 
 }
 
 // Call function expressions and listen for events.
 convertBtn.addEventListener("click", handleConversionDisplay);
-darkModeSwitch.addEventListener("change", handleDarkModeSwitch);
+darkModeSwitch.addEventListener("change", handleDarkModeStyle);
 handleDarkModeAuto();
 handleCloseModal();

@@ -1,5 +1,5 @@
 * {
-    transition: all .2s ease-in-out;
+    transition: all .2s ease-out;
 }
 
 html {
@@ -64,6 +64,8 @@ main h6 {
     bottom: 0;
     border-radius: 34px;
     background-color: #ccc;
+    -webkit-transition: .2s;
+    transition: all .2s ease-out;
 }
 
 .slider:before {
@@ -75,9 +77,9 @@ main h6 {
     bottom: 4px;
     border-radius: 50%;
     background-color: white;
-    -webkit-transition: -webkit-transform 2s ease-in-out;
-    -webkit-transition: all 2s ease-in-out;
-    transition: all .2s ease-in-out;
+    -webkit-transition: .2s;
+    -webkit-transition: -webkit-transform .2s;
+    transition: all .2s ease-out;
 }
 
 .dark-mode-slider:before {
@@ -123,7 +125,7 @@ main {
     width: 100px;
     height: 50px;
     outline: none;
-    transition: all .2s ease-in-out !important;
+    transition: all .2s ease-out !important;
 }
 
 .btn:hover {

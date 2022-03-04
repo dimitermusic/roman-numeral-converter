@@ -1,6 +1,9 @@
 // Select elements from DOM.
 const darkModeSwitch = document.getElementById("dark-mode")
 const convertBtn = document.getElementById("convertBtn");
+const ansEl = document.getElementById("answer");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("close");
 // Define roman numeral dictionary.
 const romNumObj = {
     I: 1,
@@ -55,16 +58,12 @@ const handleConversionDisplay = (e) => {
     // preventDefault() to prevent page from refreshing when button is clicked.
     e.preventDefault();
 
-    const ansEl = document.getElementById("answer");
-    const modal = document.getElementById("modal");
-    const closeModal = document.getElementById("close");
-
-    // Select user input from text box on page.
+    // Select user input from text box on page and change to uppercase.
     const userInput = document.querySelector("#userInput").value.toUpperCase();
-    // Check for invalid characters and return message if any then refresh page.
+    // Define array with any invalid characters from input.
     let invalidChars = userInput.split("").filter(char => !(char in romNumObj));
 
-    // If input is invalid, display custom modal, else use conversion function to dynamically display result.
+    // If any invalid characters, display custom modal, else use conversion function to dynamically display result.
     if (invalidChars.length > 0 || userInput === "") {
 
         modal.style.display = "flex";
